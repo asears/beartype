@@ -48,6 +48,31 @@
 #  Lastly, note that (much like "typing.NoReturn") "typing.TypeGuard"
 #  subscriptions are *ONLY* usable as return annotations. Raise exceptions, yo.
 
+# TLDR
+# ----
+# This part of the program is about how to check what kind of stuff other things are.
+# For example, you might want to check if something is a number, or a word, or a list, or a function.
+# But checking what kind of stuff other things are can take a long time.
+# Sometimes you have a lot of things to check, and you don’t want to wait too long.
+# So this part of the program has a clever way of deciding when to stop checking.
+# It uses a special thing called check_time_max_multiplier, which is a number that you can change.
+# It tells the program how much time it can spend checking things.
+
+# The program uses some math to figure out how much time it has left.
+# It looks at how much time it has already spent checking things, and how much time the whole program has been running.
+# It also looks at the current time, and the time when it started checking things.
+# It uses these times to calculate two numbers: b and T. b is the total time spent checking things, and T is the total time the program has been running.
+
+# Then the program compares b and T using check_time_max_multiplier.
+# It multiplies b by check_time_max_multiplier, and sees if it is smaller than T. If it is, then the program can keep checking things.
+# If it is not, then the program has to stop checking things. This way, the program can balance between being careful and being fast.
+
+# But this math is not perfect. It can make some mistakes.
+# For example, it can miss some things that are not really functions, but look like functions.
+# It can also fail on some computers that run Python in a different way.
+# So you have to be careful when you use this part of the program, and not trust it too much.
+# It is a useful thing, but it has some problems.
+# ----
 #FIXME: [O(n)] Ah-ha! We now know how to implement O(log n) and O(n)
 #type-checking in a scaleable manner that preserves @beartype's strong
 #performance guarantees. How? With a timed deadline cutoff. Specifically:
