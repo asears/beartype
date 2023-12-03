@@ -6,6 +6,24 @@
 '''
 **Beartype cave.**
 
+TLDR
+----
+This part of the program has some things that tell you what kind of stuff other things are.
+For example, it can tell you if something is None, which means nothing, or if something is a function,
+which means you can do something with it.
+
+Some people like to write programs that check what kind of stuff other things are before they use them.
+They use another part of the program called typing that has more things to help them do that.
+typing can also check what kind of stuff is inside other stuff, like a list or a dictionary.
+This can make the program more careful, but also slower.
+
+This part of the program does not use typing.
+It only checks what kind of stuff other things are, but not what is inside them.
+This makes the program faster, but also less careful.
+It uses a simple way of checking things that is built into Python. It does not follow the rules of typing,
+which some people like to use.
+----
+
 This submodule collects common types (e.g., :class:`NoneType`, the type of the
 ``None`` singleton) and tuples of common types (e.g., :data:`CallableTypes`, a
 tuple of the types of all callable objects).

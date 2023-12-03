@@ -249,6 +249,33 @@ encapsulating each call to each callable on the current call stack).
 # ....................{ TYPES ~ call : function            }....................
 FunctionType = _FunctionType
 '''
+TLDR
+----
+A function is a piece of code that you can use many times to do something.
+Some functions are written in Python, which is a language that you and I can understand.
+Some functions are written in C, which is a language that computers can understand better.
+You can use a special thing called FunctionType to see if a function is written in Python or C.
+
+But FunctionType is not very smart. It can get confused by some things that look like functions but are not really functions.
+For example, there are things called lambda functions, which are functions that have no name.
+There are also things called methods, which are functions that belong to a class.
+
+A class is a way of grouping things that have something in common.
+For example, you can have a class of dogs, and each dog can have a method to bark.
+FunctionType thinks that these things are functions written in Python, but they are not.
+
+Also, FunctionType does not work on some computers that use a different way of running Python.
+For example, there is a computer called PyPy, which makes Python faster by changing it into C.
+PyPy makes all functions look like they are written in C, even if they are written in Python.
+FunctionType cannot tell the difference between them.
+
+So, FunctionType is a useful thing, but it has some problems.
+It can help you see if a function is written in Python or C, but it can also make some mistakes.
+It can be fooled by some things that look like functions but are not,
+and it can be broken by some computers that change Python into C.
+
+You have to be careful when you use it, and not trust it too much.
+----
 Type of all **pure-Python functions** (i.e., functions implemented in Python
 *not* associated with an owning class or instance of a class).
 
